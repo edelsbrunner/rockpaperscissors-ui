@@ -1,0 +1,44 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span style="margin-left: 50px;">Code Challenge</span>
+    <div class="spacer"></div>
+</div>
+
+<div class="content" role="main">
+
+  <!-- Resources -->
+  <h2>Rock Paper Scissors</h2>
+  <p>Choose your move</p>
+
+  <div class="card-container">
+    <a class="card" [ngClass]="{'selected-card': selectedSymbol === symbolsForUI.ROCK}" target="_blank" rel="noopener" (click)="selectSymbol(symbolsForUI.ROCK)">
+      <svg width="32px" height="32px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" fill-rule="evenodd" d="M113.267 17.073a6 6 0 0 1 7.65 1.994l27.365 40.29a6.004 6.004 0 0 1 .938 4.456l-17.75 96.424a6.008 6.008 0 0 1-.614 1.75l-5.615 10.465a6 6 0 0 1-7.159 2.864l-40.966-13.455a5.998 5.998 0 0 1-3.623-3.292L43.896 91.043a6 6 0 0 1 .075-4.981l20.462-43.107a6 6 0 0 1 2.733-2.792l46.101-23.09Zm-46.804 49.59-10.477 22.07 14.724 33.593-3.134-46.802-1.113-8.861Zm15.11 38.283 3.132 46.777 23.595 7.75-26.727-54.527Zm38.451 51.181 16.637-90.375-24.142-14.339-31.464 25.212 38.969 79.502ZM78.167 63.561l28.341-22.708 1.394-7.672-31.566 15.81 1.831 14.57Zm41.066-25.616-.574 3.158 4.558 2.707-3.984-5.865Z" clip-rule="evenodd"></path></g></svg>
+      <span>Rock</span>
+    </a>
+
+    <a class="card" [ngClass]="{'selected-card': selectedSymbol === symbolsForUI.PAPER}" target="_blank" rel="noopener" (click)="selectSymbol(symbolsForUI.PAPER)">
+      <svg width="28px" height="28px" viewBox="-5.25 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_19" data-name="Group 19" transform="translate(-1219.44 -717.022)"> <path id="Path_50" data-name="Path 50" d="M1256.94,765.022h-35.5v-46h21.25l14.25,15.75Z" fill="#ffffff" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path> <path id="Path_51" data-name="Path 51" d="M1241.69,720.022v14.75h14.25" fill="#d1d3d4" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path> <line id="Line_28" data-name="Line 28" x2="20.75" transform="translate(1227.69 757.272)" fill="none" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></line> <line id="Line_29" data-name="Line 29" x2="10.75" transform="translate(1227.69 749.272)" fill="none" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></line> </g> </g></svg>
+      <span>Paper</span>
+    </a>
+
+    <a class="card" [ngClass]="{'selected-card': selectedSymbol === symbolsForUI.SCISSORS}" target="_blank" rel="noopener" (click)="selectSymbol(symbolsForUI.SCISSORS)">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Scissors</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Scissors"> <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24"> </rect> <circle id="Oval" stroke="#0C0310" stroke-width="2" stroke-linecap="round" cx="6.5" cy="17.5" r="3.5"> </circle> <line x1="8.5" y1="14.5" x2="19" y2="4" id="Path" stroke="#0C0310" stroke-width="2" stroke-linecap="round"> </line> <circle id="Oval" stroke="#0C0310" stroke-width="2" stroke-linecap="round" transform="translate(17.500000, 17.500000) scale(-1, 1) translate(-17.500000, -17.500000) " cx="17.5" cy="17.5" r="3.5"> </circle> <line x1="15" y1="14" x2="5" y2="4" id="Path" stroke="#0C0310" stroke-width="2" stroke-linecap="round"> </line> </g> </g> </g></svg>
+      <span>Scissors</span>
+    </a>
+
+  </div>
+  <div class="card-container">
+    <button class="card card-small" tabindex="0" (click)="sendData()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .linesandangles_een{fill:#111918;} </style> <path class="linesandangles_een" d="M28.414,24l-3-3l2.293-2.293l-1.414-1.414l-2.236,2.236l-3.588-4.186L25,11.46V6h-5.46L16,10.13 L12.46,6H7v5.46l4.531,3.884l-3.588,4.186l-2.236-2.236l-1.414,1.414L6.586,21l-3,3L7,27.414l3-3l2.293,2.293l1.414-1.414 l-2.237-2.237L16,19.174l4.53,3.882l-2.237,2.237l1.414,1.414L22,24.414l3,3L28.414,24z M6.414,24L8,22.414L8.586,23L7,24.586 L6.414,24z M9,10.54V8h2.54l3.143,3.667l-1.85,2.159L9,10.54z M20.46,8H23v2.54L10.053,21.638l-0.69-0.69L20.46,8z M18.95,16.645 l3.688,4.302l-0.69,0.69l-4.411-3.781L18.95,16.645z M25,24.586L23.414,23L24,22.414L25.586,24L25,24.586z"></path> </g></svg>
+      <span>Play</span>
+    </button>
+  </div>
+
+  <!-- Terminal -->
+  <div class="terminal">
+      <pre>Result:</pre>
+      <pre *ngIf="gameResponse">Opponent symbol: {{gameResponse.opponentSymbol}}</pre>
+      <pre *ngIf="gameResponse" class="result" [ngClass]="{'color-green': gameResponse.result === 'VICTORY', 'color-grey': gameResponse.result === 'EQUAL', 'color-red': gameResponse.result === 'LOSE'}">{{gameResponse.result}}</pre>
+  </div>
+
+</div>
